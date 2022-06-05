@@ -1,0 +1,40 @@
+[System]
+Name='MATLAB NEM SICAKLIK MOTOR FUZY LOJIK'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='SICAKLIK'
+Range=[-20 50]
+NumMFs=3
+MF1='Cso':'trimf',[3480 6980 6980]
+MF2='mf2':'trimf',[-14.17 15 44.17]
+MF3='mf3':'trimf',[20.83 50 79.17]
+
+[Input2]
+Name='NEM'
+Range=[0 100]
+NumMFs=3
+MF1='Az':'trimf',[50 100 100]
+MF2='mf2':'trimf',[8.333 50 91.67]
+MF3='mf3':'trimf',[58.33 100 141.7]
+
+[Output1]
+Name='MOTOR_GUCU'
+Range=[-100 100]
+NumMFs=3
+MF1='NB':'trimf',[-101.5 -98.5 -71.5]
+MF2='mf2':'trimf',[-83.33 0 83.33]
+MF3='mf3':'trimf',[16.67 100 183.3]
+
+[Rules]
+2 1, 1 (1) : 1
+1 1, 1 (1) : 1

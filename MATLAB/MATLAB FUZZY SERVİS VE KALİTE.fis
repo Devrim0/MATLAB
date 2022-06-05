@@ -1,0 +1,58 @@
+[System]
+Name='MATLAB FUZZY SERVİS VE KALİTE'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='Yemek'
+Range=[0 100]
+NumMFs=4
+MF1='K':'trimf',[0 0 30]
+MF2='N':'trimf',[0 30 60]
+MF3='G':'trimf',[30 60 100]
+MF4='CG':'trimf',[60 100 100]
+
+[Input2]
+Name='Servis'
+Range=[0 100]
+NumMFs=4
+MF1='K':'trimf',[-33.33 4.441e-16 33.33]
+MF2='N':'trimf',[0 30 60]
+MF3='G':'trimf',[30 60 100]
+MF4='CG':'trimf',[60 100 100]
+
+[Output1]
+Name='Bahşiş'
+Range=[0 500]
+NumMFs=5
+MF1='H':'trimf',[0 0 50]
+MF2='A':'trimf',[0 50 150]
+MF3='0':'trimf',[50 150 350]
+MF4='Y':'trimf',[150 350 500]
+MF5='CY':'trimf',[350 500 500]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+1 4, 3 (1) : 1
+2 1, 1 (1) : 1
+2 2, 3 (1) : 1
+2 3, 4 (1) : 1
+2 4, 4 (1) : 1
+3 1, 2 (1) : 1
+3 2, 3 (1) : 1
+3 3, 4 (1) : 1
+3 4, 5 (1) : 1
+4 1, 2 (1) : 1
+4 2, 3 (1) : 1
+4 3, 4 (1) : 1
+4 4, 5 (1) : 1
